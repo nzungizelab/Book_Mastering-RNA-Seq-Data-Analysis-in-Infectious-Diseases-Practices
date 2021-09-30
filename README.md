@@ -3,3 +3,5 @@ This book covers the skills necessary to analyses RNA seq data, such as preproce
 
 <img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/Mastering%20RNA%20Seq%20Data.jpg" 
      width="400" height="500">
+
+This repository contains the entire book : Mastering RNA Seq Data Analysis in Infectious Diseases Practices (Malaria and COVID-19)
