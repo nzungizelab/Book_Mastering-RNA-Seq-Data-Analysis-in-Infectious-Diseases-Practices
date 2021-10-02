@@ -82,11 +82,16 @@ ERR2240092_1.fastq.gz, ERR2240092_2.fastq.gz | CMR-PER-1_R1.fastq.gz, CMR-PER-1_
 5. Differential expression analysis: `edgeR`
 
 - Create a working main directory (Open terminal in Linux)
+```
 cd ~/home/lambert/
 mkdir RNAseq_Weedall
+```
 - Create a subdirectory for raw data
+```
 mkdir 1.Raw_data
+```
 - Create other subdirectories 1 to 6 necessary for RNA-seq analysis workflow
+```
 1.Raw_data # Contain the downloaded raw data (fastq.gz)
 2.Ref_genome # Contain the reference genome and genome annotation file (.GTF/.GFF)
 3.Quality_control # Quality control of raw data.
@@ -94,3 +99,73 @@ mkdir 1.Raw_data
 5.Alignment # Mapped reads (Bam files)
 6.Quantification # Summarized gene counts across all samples.
 7.DE # Differential expression analysis.
+```
+
+* Exercise design
+In total, we have six pairs of fastq files, four pairs belonging to the treated (CMR-1 and GHA-1) condition, and two pairs belonging to the control (FANG-4).
+  * CMR: Cameroon
+  * GHA: Ghana
+  * FANG: is a fully insecticide susceptible strain derived from Angola.
+
+* Question 1: How to move to the directory you just created?
+  * Open terminal in Linux
+```
+cd ~/RNAseq_Weedall/1.Raw_data
+```
+* Question 2: How can you check your current working directory?
+```
+pwd
+```
+* Output: (make sure we're in the right spot!)
+```
+/home/lambert/RNAseq_Weedall
+```
+
+
+* Note: you may have a different path to the RNAseq_Weedall directory on your own machine.
+
+* Acquisition of Raw Data (downloads)
+  * Time required: depend on the internet connection and the power of the computer.
+  * Open the Terminal. First, go to the folder, where the data should be stored.
+  * Once you’re in the correct folder, make a 1.Raw_data directory if not already made as shown above (preliminary exercise).
+```
+ cd ~/home/lambert/RNAseq_Weedall/
+mkdir 1.Raw_data
+cd ~/RNAseq_Weedall/1.Raw_data
+```
+* Link to downloading the raw data
+```
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR224/008/ERR2240088/ERR2240088_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR224/008/ERR2240088/ERR2240088_2.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR224/009/ERR2240089/ERR2240089_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR224/009/ERR2240089/ERR2240089_2.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR224/002/ERR2240092/ERR2240092_1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR224/002/ERR2240092/ERR2240092_2.fastq.gz
+```
+
+* Notes :
+1. If you want all datasets to visit, click [here](https://www.ebi.ac.uk/ena/browser/home) and add PRJEB24351 in the search tool then select any file you want to download under the column of FASTQ FTP. Then rightclick on the file and copy the link address then paste in your terminal "wget copied link address".
+2. Each data should be downloaded by its own FTP link.
+3. Remember to keep raw data files and results in separate directories.
+4. You will find samples (2 replicate in each of 7 samples), download the samples corresponding to 'FANG-4' as control, 'GHA-PER-1' and 'CMR-PER-1'.
+5. Rename the files into simple names according to "Submitted FTP" e.g: CMR-PER-1_R1.fastq.gz, CMR-PER-1_R2.fastq.gz.
+6. CMR: sample collected in Cameroon and sample collected in Ghana (GHA).
+7. PER: Permethrin (insecticide belong to the class of pyrethroid)
+8. CMR-PER-1: mosquitoes alive after 1 hour of PERmethrin exposure collected in Cameroon.
+
+* Downloading reference genome
+Visit the website of [vectorbase](https://vectorbase.org/vectorbase/app) in `Data` tab select `Download data files` and click Current_Release/ then in the list of species click `AfunestusFUMOZ/` directory next click `fasta/directory` click `Data` then download VectorBase-53_AfunestusFUMOZ_Genome.fasta
+
+All commands that are given in this practical tutorial should be run within the main directory called `RNAseq_Weedall`.
+```
+~/home/lambert/RNAseq_Weedall/
+```
+
+* Raw data
+Check that the raw data (paired-end reads) directory contains the above-mentioned files by typing:
+```
+cd ~/RNAseq_Weedall/1.Raw_data
+ls -lh
+```
+ * Output: 
+ 
