@@ -169,3 +169,26 @@ ls -lh
 ```
  * Output: 
  
+<img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/1.png" 
+     width="500" height="200">
+* Alternative option :
+```
+ls -l *.fastq.gz
+```
+* Check the first 5 lines of reads:
+```
+zcat CMR-PER-1_R1.fastq.gz | head -n 5
+```
+* Alternative option :
+```
+head -5 CMR-PER-1_R1.fastq
+```
+* Check the last 4 lines of reads:
+```
+zcat CMR-PER-1_R1.fastq.gz | tail -n 4
+```
+
+* Output: 
+ 
+<img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/1.png" 
+     width="500" height="200">
