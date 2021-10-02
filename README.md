@@ -190,5 +190,14 @@ zcat CMR-PER-1_R1.fastq.gz | tail -n 4
 
 * Output: 
  
-<img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/1.png" 
+<img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/2.png" 
      width="500" height="200">
+     
+* We can view the file using the command called "less":
+```
+gzip -dc FANG-4_R1.fastq.gz | less
+```
+* Check and view the head of the file
+```
+zcat *.fastq.gz | head
+```
