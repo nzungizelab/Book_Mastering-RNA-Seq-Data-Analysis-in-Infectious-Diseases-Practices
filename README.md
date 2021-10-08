@@ -201,3 +201,7 @@ gzip -dc FANG-4_R1.fastq.gz | less
 ```
 zcat *.fastq.gz | head
 ```
+* Output: 
+ 
+<img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/2.png" 
+     width="500" height="200">
