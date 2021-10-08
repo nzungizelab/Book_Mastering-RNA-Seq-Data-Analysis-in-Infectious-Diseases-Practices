@@ -203,5 +203,17 @@ zcat *.fastq.gz | head
 ```
 * Output: 
  
-<img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/2.png" 
+<img src="https://github.com/nzungizelab/Book_Mastering-RNA-Seq-Data-Analysis-in-Infectious-Diseases-Practices/blob/NzungizeL/images/22.png" 
      width="500" height="200">
+* Check the number of lines for: CMR-PER-1_R1.fastq.gz and CMR-PER-1_R2.fastq.gz
+```
+wc -l CMR-PER-1_R1.fastq.gz CMR-PER-1_R2.fastq.gz
+```
+ * Note: You can perform the same command to other samples (GHA and FANG)
+
+* Output: 
+```
+6084609 CMR-PER-1_R1.fastq.gz
+5916104 CMR-PER-1_R2.fastq.gz
+12000713 total
+```
