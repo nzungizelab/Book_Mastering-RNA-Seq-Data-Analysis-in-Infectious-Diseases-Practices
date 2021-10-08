@@ -217,3 +217,16 @@ wc -l CMR-PER-1_R1.fastq.gz CMR-PER-1_R2.fastq.gz
 5916104 CMR-PER-1_R2.fastq.gz
 12000713 total
 ```
+# What is a good number of reads for RNA-Seq?
+The good reads for large genomes such as human and mouse are between 20-30 million reads
+per sample, medium genomes according to the specific project, should be between 15-20 million
+reads per sample and for the small genomes like bacteria is between 5-10 million reads per
+sample.
+
+# Reference genome annotation files
+* Annotation .gtf file and genome .fasta file are provided in subdirectory called `2.Ref_genome`
+* In "AfunF3_chr_modified.fa" the chromosomes was renamed as follow :
+  * CM012071.1 = Chromosome 2
+  * CM012072.1 = Chromosome 3
+  * CM012070.1 = Chromosome X
+  * RCWQ01006588.1 = MT
