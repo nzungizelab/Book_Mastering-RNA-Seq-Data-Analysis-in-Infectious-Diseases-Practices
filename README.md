@@ -230,3 +230,17 @@ sample.
   * CM012072.1 = Chromosome 3
   * CM012070.1 = Chromosome X
   * RCWQ01006588.1 = MT
+```
+cd ~/home/lambert/RNAseq_Weedall/
+mkdir 2.Ref_genome
+cd ~/RNAseq_Weedall/2.Ref_genome
+```
+* **Question 3:** How many lines does Anopheles-funestusFUMOZ_BASEFEATURES_AfunF3.gtf contain?
+```
+wc -l Anopheles-funestus-FUMOZ_BASEFEATURES_AfunF3.gtf
+```
+ * Alternative option :
+ ```
+ cat Anopheles-funestus-FUMOZ_BASEFEATURES_AfunF3.gtf | wc -l
+ ```
+ * Output: `230676`
