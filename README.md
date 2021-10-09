@@ -107,12 +107,12 @@ In total, we have six pairs of fastq files, four pairs belonging to the treated 
   * GHA: Ghana
   * FANG: is a fully insecticide susceptible strain derived from Angola.
 
-* Question 1: How to move to the directory you just created?
+* **Question 1:** How to move to the directory you just created?
   * Open terminal in Linux
 ```
 cd ~/RNAseq_Weedall/1.Raw_data
 ```
-* Question 2: How can you check your current working directory?
+* **Question 2:** How can you check your current working directory?
 ```
 pwd
 ```
