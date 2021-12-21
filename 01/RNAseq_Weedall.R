@@ -1,6 +1,5 @@
 
 # Set working directory 
-
 setwd("D:/RNAseq_Weedall/7.DE")
 
 
@@ -61,7 +60,6 @@ apply(data_raw2[,1, drop=F], 2, function(c)sum(c!=0)) # only select column 1
 # Merging count reads with experiment design table
 #DGEList object has "group" which is the basic experimental group for each sample.
 y <- DGEList(data_raw2, samples=expdesign, group=expdesign$condition) #Converting counts to DGEList object
-
 
 #Alternative option:
 groups <- factor(expdesign$condition)
@@ -153,7 +151,6 @@ abline(h=0, col="red", lty=2, lwd=2)
 dev.off()
 # The Figure indicates Mean-difference plot of log2-expression in CMR-1 versus the average log2-expression across all other samples
 
-
 # sample GHA-1
 png(paste0(outpath,"MDplot_compares_sample2_to_ref_library.png"))
 plotMD(y_filtered_normalized, column=2, main = "DEG within sample GHA-1")
@@ -171,7 +168,6 @@ png(paste0(outpath,"MDS_plot.png"))
 plotMDS(y_filtered_normalized, labels=groups, main="Differential expressed genes") # error: Only 2 columns of data: need at least 3
 dev.off()
 
-  
 # 7. Create the design matrix ( Setting up the Model)
 
 # Design matrix records which conditions/treatment were applied to each sample.
@@ -209,7 +205,6 @@ png(paste0(outpath,"est_Comm_disp.png")) #No dispersion value found
 plotBCV(y_et, main = "RNAseq experiment")
 dev.off()
 
-
 # Estimating gene-wise dispersion estimates using GLM (Generalized Linear Model) fitting
 # Help us to get an overall level of biological variablility
 y_et2 <- estimateGLMCommonDisp(y_et, design, verbose=T)
@@ -222,7 +217,6 @@ y_et2$tagwise.dispersion
 png(paste0(outpath,"est_tagwise_disp.png"))
 plotBCV(y_et2, main = "RNAseq experiment")
 dev.off()
-
 
 # 9. Differential expression analysis (between libraries)
 
@@ -267,13 +261,11 @@ edgeR_result_3  # Print top genes
 topTags(qlf, n=100000)  # top 100k DEG
 summary(edgeR_result_3)
 
-
 # Alternative for Quasi-likehood F-test
 # top genes individual by counts-per-million  
 edgeR_result_4 <- rownames(topTags(qlf)) # top 10 in rows
 edgeR_result_4 
 cpm(y_et2)[edgeR_result_4,] # top 10 in table with cpm
-
 
 #Extract table from qlf object and save it
 results <- lrt$table
@@ -295,12 +287,10 @@ plotSmear(lrt, de.tags=de2, main = "RNAseq experiment")
 abline(h=c(-1, 1), col=2)
 dev.off()
 
-
 #Adjust p-value
 results$Padj <- p.adjust(results$PValue, method = "BH") #Benjamini-Hochberg method  (BH)
 results <-results[order(results$Padj),]
 View(results)
-
 
 #Volcano plot
 deg <- which(results$Padj<=0.05)
@@ -339,7 +329,6 @@ out_lrt <- topTags(lrt, n = "Inf", adjust.method="BH", sort.by="none", p.value=1
 out_lrt
 out_qlf <- topTags(qlf, n = "Inf", adjust.method="BH", sort.by="none", p.value=1)$table
 out_qlf
-
 
 #Reference:
 #Robinson, MD.et al. (2010) edgeR: a Bioconductor package for differential expression analysis of digital gene expression data, Bioinformatics, 26 (1) 139-140.
@@ -407,7 +396,6 @@ head(gene_matrix)
 # AFUN020895 AFUN017558 AFUN017694 AFUN002422 AFUN015094 AFUN016451 
 # -4.808196   7.613668  -5.806523  -2.571662   3.080024   5.362686 
 
-
 # 10.1. Enrich genes using the KEGG database
 library(KEGG.db)
 kegg_enrich <- enrichKEGG(gene = names(gene_matrix),
@@ -417,7 +405,6 @@ kegg_enrich <- enrichKEGG(gene = names(gene_matrix),
 
 
 #This analysis was conducted on:
-
 sessionInfo()
 
 R version 4.0.5 (2021-03-31)
