@@ -1,4 +1,3 @@
-
 # Set working directory 
 setwd("D:/RNAseq_Weedall/7.DE")
 
@@ -9,7 +8,6 @@ setwd("D:/RNAseq_Weedall/7.DE")
 library(edgeR)
 library(limma)
 library(pheatmap)
-
 
 # 2. Import raw_data
 
@@ -32,7 +30,6 @@ AfunF3_gtf_df = as.data.frame(AfunF3_gtf)
 # Save table in .csv format or in .txt format
 write.table (AfunF3_gtf_df, "AfunF3_gtf_df.csv", sep="\t", row.names=F)
 write.table (AfunF3_gtf_df, "AfunF3_gtf_df.txt", sep="\t", row.names=F)
-
 
 ls()
 dim(data_raw2)  # Check dimensions
@@ -69,7 +66,6 @@ y1 <- DGEList(counts=data_raw2, samples=expdesign, group=groups)
 y
 y$samples
 head(y$counts) #Many rows!
-
 
 # 4.Filtering
 
