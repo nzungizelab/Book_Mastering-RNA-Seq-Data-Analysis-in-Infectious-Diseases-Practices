@@ -1,3 +1,9 @@
+##  Author : Lambert Nzungize
+##  Email  : nzulapa@outlook.com
+## 
+###################################################################
+
+
 # Set working directory 
 setwd("D:/RNAseq_Weedall/7.DE")
 
