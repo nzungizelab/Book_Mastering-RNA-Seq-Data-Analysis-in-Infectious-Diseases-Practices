@@ -1,3 +1,8 @@
+##  Author : Lambert Nzungize
+##  Email  : nzulapa@outlook.com
+## 
+###################################################################
+
 #Create a new R script, open Rstudio then click File -> New File -> R script and save it as RnaseqCovid.R
 
 # 1. Set your R working directory to the kallisto_output by locating your project folder into your local computer
